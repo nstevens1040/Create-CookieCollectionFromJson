@@ -7,7 +7,7 @@ To get started, install the [EditThisCookie](https://www.editthiscookie.com) bro
    - [Chrome](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
    - [Opera](https://addons.opera.com/en/extensions/details/edit-this-cookie)  
 
-Once it's installed, you can identify the extension by it's cookie icon (exactly the same as the [EditThisCookie favicon](https://www.editthiscookie.com/favicon.ico)).  
+Once it's installed, you can identify the extension by it's cookie icon [](https://cdn.editthiscookie.com/images/cookie_v1.png).  
 
 Click once on the cookie icon, then find the export button. At the top of the extension's control panel, you'll see two icons with arrows pointing to the right. The first one from the left is an **import** icon and the second one from the left is the **export** icon. Hovering your mouse over the icons will tell you what they are. Click once on the **export** icon. The extension will let say **Cookies copied to the clipboard** in a small pop-up box.  
 
