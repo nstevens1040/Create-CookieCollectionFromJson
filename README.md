@@ -16,3 +16,16 @@ Open your favorite text editor and paste your cookies. Save the file with a **.j
 <img width=640 height=360 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/3.gif">
 
 # Create-CookieCollectionFromJson  
+
+Now that you have your cookies in a json file, go ahead and launch **Windows PowerShell**.  
+To make the script available in your current PowerShell session, run the code below.  
+```ps1
+iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
+```  
+The script takes only one argument via the **-JsonFilePath** parameter.  
+Run the script like so.  
+```ps1
+Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Path\To\JsonFile.json"
+```  
+The script will notify you of it's success and let you know how to access the cookies.  
+The way it works is that it creates a custom c# class with a property named (*your cookie domain*)_cookies.  
