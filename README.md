@@ -13,8 +13,6 @@ Click once on the cookie icon, then find the export button. At the top of the ex
 
 Open your favorite text editor and paste your cookies. Save the file with a **.json** file extension.  
 
-<img width=640 height=360 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/3.gif">
-
 # Create-CookieCollectionFromJson  
 
 Now that you have your cookies in a json file, go ahead and launch **Windows PowerShell**.  
