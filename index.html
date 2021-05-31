@@ -4,6 +4,7 @@
         <meta chartset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded",()=> {
             document.cookie = "test_cookie=428f8cde-d92d-4000-93d2-52f338ca573c; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "c_user=1ee70c51-2413-464f-be9a-bec0a598d3e5; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "datr=eb4ab460-573c-4863-b28b-31b58ee41757; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
@@ -12,8 +13,18 @@
             document.cookie = "sb=fd7d7c21-663a-45ff-98d6-372e98bf0641; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "spin=c9ee83f4-3649-4ef3-831a-ecad1ccaf6b9; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "xs=ab30e822-2056-450e-935a-46bce2ce047a; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
+            document.getElementById("span").innerHTML = document.location.href;
+        });
         </script>
+        <style type="text/css">
+            body {
+                color: chartreuse;
+                background-color: black;
+                font-size: 20pt;
+                font-family: 'Segoe UI'
+        </style>
     </head>
     <body>
+        <span id="span"></span>
     </body>
 </html>
