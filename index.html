@@ -32,6 +32,7 @@
                 var tr = document.createElement("tr");
                 var td1 = document.createElement("td");
                 var td2 = document.createElement("td");
+                td1.classList.add("cookie_name");
                 td1.innerHTML = k;
                 td2.innerHTML = v;
                 [td1,td2].forEach((iii)=>{tr.appendChild(iii)});
@@ -47,18 +48,19 @@
                 font-family: 'Segoe UI'
             }
             table,tr,td {
+                font-size: 16pt;
                 border-collapse: collapse;
                 border: 1px solid white;
             }
             #heading {
                 margin: auto;
-                width: 50%;
+                width: 80%;
                 text-align: center;
                 background-color: #100e47;
             }
             #cookietable {
                 margin: auto;
-                width: 50%;
+                width: 80%;
                 background-color: #100e47;
             }
             .padding {
@@ -66,9 +68,12 @@
             }
             #summary {
                 margin: auto;
-                width: 50%;
+                width: 80%;
                 text-align: center;
                 background-color: #100e47;
+            }
+            .cookie_name {
+                text-align:center;
             }
         </style>
     </head>
