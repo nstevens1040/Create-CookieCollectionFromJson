@@ -18,7 +18,7 @@
             document.cookie = "sb=" + uuidv4() + "; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "spin=" + uuidv4() + "; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "xs=" + uuidv4() + "; domain=nstevens1040.github.io; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
-            document.getElementById("span").innerHTML = new URL(document.location.href).host;
+            document.getElementById("span").innerHTML = new URL(document.location.href).host + ew URL(document.location.href).pathname.replace(/\/$/,'');
             var t = document.getElementById("cookietable");
             [...document.cookie.split(';')].forEach((i)=>{
                 var k = i.split('=')[0];
@@ -54,7 +54,7 @@
             }
             #heading {
                 margin: auto;
-                width: 80%;
+                width: 90%;
                 text-align: center;
                 background-color: #100e47;
                 border: 2px solid white
