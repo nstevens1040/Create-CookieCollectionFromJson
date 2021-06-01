@@ -1,4 +1,4 @@
-# Import cookies into Windows PowerShell and start making authenticated http requests  
+# Using cookies in Windows PowerShell  
 This script creates a **System.Net.CookieCollection** object in **Windows PowerShell** using the json exported from the [EditThisCookie](https://www.editthiscookie.com) browser extension.  
 (*This will not work in PowerShell Core because the script uses .NET Framework libraries*)  
 
