@@ -13,7 +13,7 @@ Click once on the cookie icon, then find the export button. At the top of the ex
 
 Open your favorite text editor and paste your cookies. Save the file with a **.json** file extension.  
 
-These instructions are likely more digestable as a video ↓  
+These instructions are likely more digestable as a video **↓**  
   
 <img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.gif"/>  
 
