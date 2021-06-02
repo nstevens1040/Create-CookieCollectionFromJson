@@ -7,13 +7,16 @@ To get started, install the [EditThisCookie](https://www.editthiscookie.com) bro
    - [Chrome](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
    - [Opera](https://addons.opera.com/en/extensions/details/edit-this-cookie)  
 
-Once it's installed, you can identify the extension by it's cookie icon <img height=50 width=50 src="https://cdn.editthiscookie.com/images/cookie_v1.png">.  
+Once it's installed, you can identify the extension by it's cookie icon.  
+<img height=344 width=320 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.PNG">  
 
-Click once on the cookie icon, then find the export button. At the top of the extension's control panel, you'll see two icons with arrows pointing to the right. The first one from the left is an **import** icon and the second one from the left is the **export** icon. Hovering your mouse over the icons will tell you what they are. Click once on the **export** icon. The extension will let say **Cookies copied to the clipboard** in a small pop-up box.  
+Click once on the cookie icon, then find the export button. At the top of the extension's control panel, you'll see two icons with arrows pointing to the right. The first one from the left is an **import** icon and the second one from the left is the **export** icon. Hovering your mouse over the icons will tell you what they are.  
+<img height=344 width=320 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/2.PNG">  
+
+Click once on the **export** icon. The extension will let say **Cookies copied to the clipboard** in a small pop-up box.  
+<img height=344 width=320 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/3.png">  
 
 Open your favorite text editor and paste your cookies. Save the file with a **.json** file extension.  
-
-These instructions are likely more digestable as a video **&darr;**  
   
 <img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.gif"/>  
 
