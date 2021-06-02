@@ -20,11 +20,11 @@ These instructions are likely more digestable as a video **&darr;**
 # How to use Create-CookieCollectionFromJson  
 
 Now that you have your cookies in a json file, go ahead and launch **Windows PowerShell**.  
-   1. To make the script available in your current PowerShell session, run the code below.  
+1. To make the script available in your current PowerShell session, run the code below.  
 ```ps1
 iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
 ```  
-   2. The script takes only one argument via the **-JsonFilePath** parameter.  
+2. The script takes only one argument via the **-JsonFilePath** parameter.  
 Run the script like so.  
 ```ps1
 Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Path\To\JsonFile.json"
@@ -41,7 +41,7 @@ To view my CookieCollection's properties, I run
 ```ps1
 [Nstevens1040.Cookies]::nstevens1040_cookies | select name,value,expires,secure,path,domain | ft -AutoSize
 ```  
-   3. To use the CookieCollection in an HTTP request I load my other library, [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), into Windows PowerShell with the command below.  
+3. To use the CookieCollection in an HTTP request I load my other library, [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), into Windows PowerShell with the command below.  
 ```ps1
 Add-Type -TypeDefinition ([System.Net.WebClient]::new()).DownloadString(
     "https://raw.githubusercontent.com/nstevens1040/Execute.HttpRequest/master/Execute.HttpRequest/Execute.HttpRequest.cs"
@@ -50,7 +50,7 @@ Add-Type -TypeDefinition ([System.Net.WebClient]::new()).DownloadString(
     "C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll"
 )
 ```  
-   4. Send my HTTP request  
+ 4. Send my HTTP request  
 ```ps1
 $r = [Execute.HttpRequest]::Send(
     "https://nstevens1040.github.io/Create-CookieCollectionFromJson",
