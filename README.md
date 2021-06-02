@@ -36,3 +36,31 @@ Here is an example I created with [terminalizer](https://terminalizer.com) **&da
 
 <img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/render1622658112677.gif"/>  
   
+In the example above, after I create my CookieCollection object the script tells me that it's accessible via [Nstevens1040.Cookies]::nstevens1040_cookies.  
+To view my CookieCollection's properties, I run  
+```ps1
+[Nstevens1040.Cookies]::nstevens1040_cookies | select name,value,expires,secure,path,domain | ft -AutoSize
+```  
+To use the CookieCollection in an HTTP request I load my other library, [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), into Windows PowerShell with the command below.  
+```ps1
+Add-Type -TypeDefinition ([System.Net.WebClient]::new()).DownloadString(
+    "https://raw.githubusercontent.com/nstevens1040/Execute.HttpRequest/master/Execute.HttpRequest/Execute.HttpRequest.cs"
+) -ReferencedAssemblies @(
+    "C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll",
+    "C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll"
+)
+```  
+Send my HTTP request  
+```ps1
+$r = [Execute.HttpRequest]::Send(
+    "https://nstevens1040.github.io/Create-CookieCollectionFromJson",
+    [System.Net.Http.HttpMethod]::Get,
+    $null,
+    [Nstevens1040.Cookies]::nstevens1040_cookies
+)
+```
+To view the CookieCollection returned from the HTTP request  
+```ps1
+$r.CookieCollection | select name,value,expires,secure,path,domain | ft -AutoSize
+```  
+  
