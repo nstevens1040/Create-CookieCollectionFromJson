@@ -88,7 +88,7 @@ $r.CookieCollection | select name,value,expires,secure,path,domain | ft -AutoSiz
   
 ## CSharp  
   
-launch **Windows PowerShell**.  
+Launch **Windows PowerShell**.  
   
 **1.** To make the script available in your current PowerShell session, run the code below.  
   
