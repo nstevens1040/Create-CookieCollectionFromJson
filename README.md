@@ -30,18 +30,18 @@ Run the script like so.
 Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Path\To\JsonFile.json"
 ```  
 The script will notify you of it's success and let you know how to access the cookies.  
-The way it works is that it creates a custom c# class with a property named (*your cookie domain*)_cookies.  
+It creates a custom c# class with a property named (*your cookie domain*)_cookies.  
 
 Here is an example I created with [terminalizer](https://terminalizer.com) **&darr;**  
 
 <img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/render1622658112677.gif"/>  
   
-In the example above, after I create my CookieCollection object the script tells me that it's accessible via [Nstevens1040.Cookies]::nstevens1040_cookies.  
+In the example above, after I create my **CookieCollection** object the script tells me that it's accessible via **[Nstevens1040.Cookies]::nstevens1040_cookies.**  
 To view my CookieCollection's properties, I run  
 ```ps1
 [Nstevens1040.Cookies]::nstevens1040_cookies | select name,value,expires,secure,path,domain | ft -AutoSize
 ```  
-**3.** To use the CookieCollection in an HTTP request I load my other library, [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), into Windows PowerShell with the command below.  
+**3.** To use the CookieCollection in an HTTP request I load my other library, **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, into Windows PowerShell with the command below.  
 ```ps1
 Add-Type -TypeDefinition ([System.Net.WebClient]::new()).DownloadString(
     "https://raw.githubusercontent.com/nstevens1040/Execute.HttpRequest/master/Execute.HttpRequest/Execute.HttpRequest.cs"
