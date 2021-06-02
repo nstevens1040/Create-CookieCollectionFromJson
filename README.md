@@ -31,3 +31,8 @@ Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Path\To\JsonF
 ```  
 The script will notify you of it's success and let you know how to access the cookies.  
 The way it works is that it creates a custom c# class with a property named (*your cookie domain*)_cookies.  
+
+Here is an example I created with [terminalizer](https://terminalizer.com) **&darr;**  
+
+<img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.gif"/>  
+  
