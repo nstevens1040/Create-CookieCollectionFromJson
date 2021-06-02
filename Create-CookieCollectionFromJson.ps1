@@ -3,7 +3,8 @@ function Create-CookieCollectionFromJson
     [cmdletbinding()]
     Param(
         [Parameter(Mandatory=$true)]
-        [string]$JsonFilePath
+        [string]$JsonFilePath,
+        [switch]$ReturnCSharp
     )
     $json = [io.file]::ReadAllText($JsonFilePath)
     $site = (@($JSON | ConvertFrom-Json)[0][0].domain -replace "^\.",'').Split('.')[0]
@@ -46,16 +47,22 @@ function Create-CookieCollectionFromJson
     $json_clrf = [regex]::New("\\n").Replace($json_noclrf,"`n")
     $cs = [regex]::New('(?m)^(.+)$').Replace($json_clrf,'            $1')
     $TypeDefinition = $TOP + $CS + $BOTTOM
-    try {
-        Add-Type -TypeDefinition $TypeDefinition
-    }
-    catch {
-        write-host $_ 
-    }
-    if($?)
+    if($ReturnCSharp)
     {
-        write-host "Success! " -ForeGroundColor Yellow -NoNewLine
-        write-host "Access $($namespace) cookies by calling: " -ForeGroundColor Green -NoNewLine
-        Write-Host "[$($namespace).Cookies]::$($varname)_cookies"
+        return $TypeDefinition
+    } else
+    {
+        try {
+            Add-Type -TypeDefinition $TypeDefinition
+        }
+        catch {
+            write-host $_ 
+        }
+        if($?)
+        {
+            write-host "Success! " -ForeGroundColor Yellow -NoNewLine
+            write-host "Access $($namespace) cookies by calling: " -ForeGroundColor Green -NoNewLine
+            Write-Host "[$($namespace).Cookies]::$($varname)_cookies"
+        }
     }
 }
