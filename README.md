@@ -28,7 +28,9 @@ Open your favorite text editor and paste your cookies. Save the file with a **.j
 <img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.gif"/>  
   
 # How to use Create-CookieCollectionFromJson  
-
+  
+## Windows PowerShell  
+  
 Now that you have your cookies in a json file, go ahead and launch **Windows PowerShell**.  
   
 **1.** To make the script available in your current PowerShell session, run the code below.  
@@ -82,5 +84,108 @@ To view the CookieCollection returned from the HTTP request
   
 ```ps1
 $r.CookieCollection | select name,value,expires,secure,path,domain | ft -AutoSize
+```  
+  
+## CSharp  
+  
+launch **Windows PowerShell**.  
+  
+**1.** To make the script available in your current PowerShell session, run the code below.  
+  
+```ps1
+iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
+```  
+  
+**2.** The script takes a string argument via the **-JsonFilePath** parameter and if you want the script to return the **C#** source use the **-ReturnCSharp** switch.  
+  
+```ps1
+Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Desktop\cookies.json" -ReturnCSharp
+```  
+  
+This will return the raw CSharp source code that you can use. Example output below  
+  
+```cs
+namespace Nstevens1040
+{
+    using System.Net;
+    using System;
+    public class Cookies
+    {
+        public static CookieCollection nstevens1040_cookies = new CookieCollection(){            
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "c_user",
+                Path = "/",
+                Secure = true,
+                Value = "017fcad9-d35f-4cad-900f-cca7d4079778"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "datr",
+                Path = "/",
+                Secure = true,
+                Value = "561f7746-5046-4416-888e-127f9b881ae0"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "dpr",
+                Path = "/",
+                Secure = true,
+                Value = "6735c335-451a-4bab-afa2-83505dfa13ff"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "fr",
+                Path = "/",
+                Secure = true,
+                Value = "04f05394-6ce8-4673-bc8a-80c9461b9467"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "sb",
+                Path = "/",
+                Secure = true,
+                Value = "11db0dc0-522c-4f96-9e91-37a3bae38306"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "spin",
+                Path = "/",
+                Secure = true,
+                Value = "9f584b69-92bc-4077-9e73-0b531b1b4592"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "test_cookie",
+                Path = "/",
+                Secure = true,
+                Value = "acac9822-dc7a-4199-8ac4-a51a032b2cbc"
+            },
+            new Cookie(){
+                Domain = ".nstevens1040.github.io",
+                Expires = DateTime.Parse(@"1970-01-01").AddSeconds(1654093426),
+                HttpOnly = false,
+                Name = "xs",
+                Path = "/",
+                Secure = true,
+                Value = "70cb6d9c-9483-4ba7-a4b3-9901813aa558"
+            }
+        };
+    }
+}
 ```  
   
