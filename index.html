@@ -39,8 +39,13 @@
                         value.push(i.split('=')[ii])
                     }
                 }
-                console.log(k);
-                if(cookie_names.indexOf(k) != -1){
+                var maketr = false;
+                cookie_names.forEach((i)=>{
+                    if(k.match(i)){
+                        maketr = true;
+                    }
+                });
+                if(maketr){
                     var v = value.join();
                     var tr = document.createElement("tr");
                     var td1 = document.createElement("td");
