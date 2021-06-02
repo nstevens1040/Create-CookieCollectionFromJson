@@ -10,6 +10,16 @@
                 (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
             );
         }
+        var cookie_names = [
+            "test_cookie",
+            "c_user",
+            "datr",
+            "dpr",
+            "fr",
+            "sb",
+            "spin",
+            "xs"
+        ];
         document.addEventListener("DOMContentLoaded",()=> {
             document.cookie = "test_cookie=" + uuidv4() + "; domain=" + new URL(document.location.href).host + "; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
             document.cookie = "c_user=" + uuidv4() + "; domain=" + new URL(document.location.href).host + "; secure; expires=" + new Date(new Date().getTime() + 31536000000).toGMTString() + "; path=/;";
@@ -29,15 +39,17 @@
                         value.push(i.split('=')[ii])
                     }
                 }
-                var v = value.join();
-                var tr = document.createElement("tr");
-                var td1 = document.createElement("td");
-                var td2 = document.createElement("td");
-                td1.classList.add("cookie_name");
-                td1.innerHTML = k;
-                td2.innerHTML = v;
-                [td1,td2].forEach((iii)=>{tr.appendChild(iii)});
-                t.appendChild(tr);
+                if(cookie_names.indexOf(k) != -1){
+                    var v = value.join();
+                    var tr = document.createElement("tr");
+                    var td1 = document.createElement("td");
+                    var td2 = document.createElement("td");
+                    td1.classList.add("cookie_name");
+                    td1.innerHTML = k;
+                    td2.innerHTML = v;
+                    [td1,td2].forEach((iii)=>{tr.appendChild(iii)});
+                    t.appendChild(tr);
+                }
             });
         });
         </script>
