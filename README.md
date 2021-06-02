@@ -1,7 +1,7 @@
 # Using cookies in Windows PowerShell  
 This script creates a **System.Net.CookieCollection** object in **Windows PowerShell** using the json exported from the [EditThisCookie](https://www.editthiscookie.com) browser extension.  
 (*This will not work in PowerShell Core because the script uses .NET Framework libraries*)  
-<span style="color: red;">A word of caution; please be smart while using your cookies. They are used to authenticate you.</span>  
+**A word of caution; please be smart while using your cookies. They are used to authenticate you.**  
 
 # Getting Started  
 To get started, install the [EditThisCookie](https://www.editthiscookie.com) browser extension (currently available for **Chrome** and **Opera**).  
