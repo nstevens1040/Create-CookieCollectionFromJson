@@ -37,7 +37,7 @@ Now that you have your cookies in a json file, go ahead and launch **Windows Pow
 iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
 ```  
   
-**2.** The script takes only one argument via the **-JsonFilePath** parameter.  
+**2.** The script takes a string argument via the **-JsonFilePath** parameter.  
   
 ```ps1
 Create-CookieCollectionFromJson -JsonFilePath "$($ENV:USERPROFILE)\Desktop\cookies.json"
