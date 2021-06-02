@@ -34,5 +34,5 @@ The way it works is that it creates a custom c# class with a property named (*yo
 
 Here is an example I created with [terminalizer](https://terminalizer.com) **&darr;**  
 
-<img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/1.gif"/>  
+<img height=360 width=640 src="https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/.gitignore/render1622658112677.gif"/>  
   
