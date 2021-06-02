@@ -7,7 +7,7 @@ Create-CookieCollectionFromJson creates a **System.Net.CookieCollection** object
 **A word of caution; please be smart while using your cookies. They are used to authenticate you.**  
 
 # Getting Started  
-To get started, install the [EditThisCookie](https://www.editthiscookie.com) browser extension (currently available for **Chrome** and **Opera**).  
+Install the [EditThisCookie](https://www.editthiscookie.com) browser extension (currently available for **Chrome** and **Opera**).  
    - [Chrome](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
    - [Opera](https://addons.opera.com/en/extensions/details/edit-this-cookie)  
 
