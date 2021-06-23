@@ -1,7 +1,8 @@
 # Create-CookieCollectionFromJson  
 ## Windows PowerShell Quick Start  
   
-I'm leaving this at the top of the page for convenience. The command below will make **Create-CookieCollectionFromJson** available in your current Windows PowerShell session.  
+I'm leaving this at the top of the page for convenience.  
+The command below will make **Create-CookieCollectionFromJson** available in your current Windows PowerShell session.  
 ```ps1
 iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
 ```  
