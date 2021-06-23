@@ -1,4 +1,5 @@
 # Create-CookieCollectionFromJson  
+*(Tested and working on both **Windows PowerShell 5.1** as well as **PowerShell Core 7.1.3**.)*  
 ## PowerShell Quick Start  
   
 I'm leaving this at the top of the page for convenience.  
@@ -6,16 +7,15 @@ The command below will make **Create-CookieCollectionFromJson** available in you
 ```ps1
 iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
 ```  
+## What is Create-CookieCollectionFromJson?  
   
-## Using cookies in PowerShell  
+It is a PowerShell script that creates a **[System.Net.CookieCollection](https://docs.microsoft.com/en-us/dotnet/api/system.net.cookiecollection?view=net-5.0)** object using the json exported from the **[EditThisCookie](https://www.editthiscookie.com)** browser extension.  
+
+## Use Case  
   
-Together with my other library **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, this script will alow you to make authenticated HTTP requests in PowerShell via cookies.  
+Together with my other library **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, this script will alow you to make authenticated HTTP requests in Windows PowerShell via cookies.  
   
-**Create-CookieCollectionFromJson** works for both **Windows PowerShell 5.1** as well as **PowerShell Core 7.1.3**.  
-  
-Though, I should mention that although **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)** is fully functional in **Windows PowerShell** you will find that the DOM Parsing functionality is lost if you try to use it in **PowerShell Core** because it relies on the Trident rendering engine (Microsoft.mshtml.dll).  
-  
-Create-CookieCollectionFromJson creates a **System.Net.CookieCollection** object in **PowerShell** using the json exported from the [EditThisCookie](https://www.editthiscookie.com) browser extension.  
+Although **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)** is fully functional in **Windows PowerShell** it does **not** work in **PowerShell Core** (yet).  
   
 **A word of caution; please be smart while using your cookies. They are used to authenticate you.**  
 
