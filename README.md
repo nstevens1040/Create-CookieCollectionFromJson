@@ -1,3 +1,10 @@
+# Windows PowerShell Quick Start  
+  
+I'm leaving this at the top of the page for convenience. The command below will make **Create-CookieCollectionFromJson** available in your current Windows PowerShell session.  
+```ps1
+iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
+```  
+  
 # Using cookies in Windows PowerShell  
 Together with my other library [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), this script will alow you to make authenticated HTTP requests in Windows PowerShell via cookies.  
   
