@@ -2,17 +2,21 @@
 ## Windows PowerShell Quick Start  
   
 I'm leaving this at the top of the page for convenience.  
-The command below will make **Create-CookieCollectionFromJson** available in your current Windows PowerShell session.  
+The command below will make **Create-CookieCollectionFromJson** available in your current PowerShell session.  
 ```ps1
 iex (irm "https://raw.githubusercontent.com/nstevens1040/Create-CookieCollectionFromJson/main/Create-CookieCollectionFromJson.ps1")
 ```  
   
-# Using cookies in Windows PowerShell  
-Together with my other library [Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest), this script will alow you to make authenticated HTTP requests in Windows PowerShell via cookies.  
+## Using cookies in PowerShell  
   
-Create-CookieCollectionFromJson creates a **System.Net.CookieCollection** object in **Windows PowerShell** using the json exported from the [EditThisCookie](https://www.editthiscookie.com) browser extension.  
+Together with my other library **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, this script will alow you to make authenticated HTTP requests in PowerShell via cookies.  
   
-(*This will not work in PowerShell Core because the script uses .NET Framework libraries*)  
+**Create-CookieCollectionFromJson** works for both **Windows PowerShell 5.1** as well as **PowerShell Core 7.1.3**.  
+  
+Though, I should mention that although **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)** is fully functional in **Windows PowerShell** you will find that the DOM Parsing functionality is lost if you try to use it in **PowerShell Core** because it relies on the Trident rendering engine (Microsoft.mshtml.dll).  
+  
+Create-CookieCollectionFromJson creates a **System.Net.CookieCollection** object in **PowerShell** using the json exported from the [EditThisCookie](https://www.editthiscookie.com) browser extension.  
+  
 **A word of caution; please be smart while using your cookies. They are used to authenticate you.**  
 
 # Getting Started  
@@ -38,9 +42,9 @@ Open your favorite text editor and paste your cookies. Save the file with a **.j
   
 # How to use Create-CookieCollectionFromJson  
   
-## Windows PowerShell  
+## PowerShell  
   
-Now that you have your cookies in a json file, go ahead and launch **Windows PowerShell**.  
+Now that you have your cookies in a json file, go ahead and launch **PowerShell**.  
   
 **1.** To make the script available in your current PowerShell session, run the code below.  
   
@@ -67,17 +71,12 @@ To view my CookieCollection's properties, I run
 [Nstevens1040.Cookies]::nstevens1040_cookies | select name,value,expires,secure,path,domain | ft -AutoSize
 ```  
   
-**3.** To use the CookieCollection in an HTTP request I load my other library, **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, into Windows PowerShell with the command below.  
+**3.** To use the CookieCollection in an HTTP request I load my other library, **[Execute.HttpRequest](https://github.com/nstevens1040/Execute.HttpRequest)**, into **Windows PowerShell** with the command below.  
+*(Step 3 onward works only in Windows PowerShell and not PowerShell Core)*  
   
 ```ps1
-Add-Type -TypeDefinition ([System.Net.WebClient]::new()).DownloadString(
-    "https://raw.githubusercontent.com/nstevens1040/Execute.HttpRequest/master/Execute.HttpRequest/Execute.HttpRequest.cs"
-) -ReferencedAssemblies @(
-    "C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll",
-    "C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll",
-    "C:\Windows\assembly\GAC\Microsoft.mshtml\7.0.3300.0__b03f5f7f11d50a3a\Microsoft.mshtml.dll",
-    "C:\Windows\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll"
-)
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+iex (irm "https://github.com/nstevens1040/Execute.HttpRequest/releases/download/v1.1.8/Quick-Start.ps1")
 ```  
   
 **4.** Send my HTTP request  
@@ -99,7 +98,8 @@ $r.CookieCollection | select name,value,expires,secure,path,domain | ft -AutoSiz
   
 ## CSharp  
   
-Launch **Windows PowerShell**.  
+Launch **PowerShell**.  
+*(Tested in both Windows PowerShell and PowerShell Core)*  
   
 **1.** To make the script available in your current PowerShell session, run the code below.  
   
