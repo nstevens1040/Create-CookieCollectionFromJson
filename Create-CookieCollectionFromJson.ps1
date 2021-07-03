@@ -15,6 +15,7 @@ function Create-CookieCollectionFromJson
     }
     if(![string]::IsNullOrEmpty($JsonString))
     {
+        $json = $JsonString
         $site = (@($JsonString | ConvertFrom-Json)[0][0].domain -replace "^\.",'').Split('.')[0]
     }
     $namespace = [string]::Join(
