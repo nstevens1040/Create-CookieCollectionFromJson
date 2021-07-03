@@ -4,9 +4,9 @@ function Create-CookieCollectionFromJson
     Param(
         [switch]$ReturnCSharp=$false,
         [Parameter(ValueFromPipeline=$true,ParameterSetName="FilePath")]
-        [string]$JsonFilePath=$null,
+        [string]$JsonFilePath,
         [Parameter(ValueFromPipeline=$true,ParameterSetName="String")]
-        [string]$JsonString=$null
+        [string]$JsonString
     )
     if(![string]::IsNullOrEmpty($JsonFilePath))
     {
