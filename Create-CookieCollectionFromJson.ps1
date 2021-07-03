@@ -1,13 +1,22 @@
 function Create-CookieCollectionFromJson
 {
-    [cmdletbinding()]
+    [Cmdletbinding(DefaultParameterSetName="FilePath")]
     Param(
-        [Parameter(Mandatory=$true)]
-        [string]$JsonFilePath,
-        [switch]$ReturnCSharp
+        [switch]$ReturnCSharp=$false,
+        [Parameter(ValueFromPipeline=$true,ParameterSetName="FilePath")]
+        [string]$JsonFilePath=$null,
+        [Parameter(ValueFromPipeline=$true,ParameterSetName="String")]
+        [string]$JsonString=$null
     )
-    $json = [io.file]::ReadAllText($JsonFilePath)
-    $site = (@($JSON | ConvertFrom-Json)[0][0].domain -replace "^\.",'').Split('.')[0]
+    if(![string]::IsNullOrEmpty($JsonFilePath))
+    {
+        $json = [io.file]::ReadAllText($JsonFilePath)
+        $site = (@($JSON | ConvertFrom-Json)[0][0].domain -replace "^\.",'').Split('.')[0]
+    }
+    if(![string]::IsNullOrEmpty($JsonString))
+    {
+        $site = (@($JsonString | ConvertFrom-Json)[0][0].domain -replace "^\.",'').Split('.')[0]
+    }
     $namespace = [string]::Join(
         '',
         @(for($i = 0; $i -lt $site.ToCharArray().Count; $i++)
